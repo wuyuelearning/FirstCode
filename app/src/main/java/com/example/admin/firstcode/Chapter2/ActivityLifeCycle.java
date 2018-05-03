@@ -19,7 +19,7 @@ public class ActivityLifeCycle extends AppCompatActivity implements View.OnClick
     TextView tv_start_normal_activity;
     TextView tv_start_dialog_activity;
 
-    private static final String Activity_Life_Cycle_TAG = "activity_life_cycle";
+    private static final String ACTIVITY_LIFE_CYCLE_TAG = "activity_life_cycle";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,39 +53,39 @@ public class ActivityLifeCycle extends AppCompatActivity implements View.OnClick
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(Activity_Life_Cycle_TAG, "onStart");
+        Log.d(ACTIVITY_LIFE_CYCLE_TAG, "onStart");
     }
 
     @Override
     protected void onRestart() {
-        Log.d(Activity_Life_Cycle_TAG, "onRestart");
+        Log.d(ACTIVITY_LIFE_CYCLE_TAG, "onRestart");
         super.onRestart();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(Activity_Life_Cycle_TAG, "onPause");
+        Log.d(ACTIVITY_LIFE_CYCLE_TAG, "onPause");
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(Activity_Life_Cycle_TAG, "onStop");
+        Log.d(ACTIVITY_LIFE_CYCLE_TAG, "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(Activity_Life_Cycle_TAG, "onDestroy");
+        Log.d(ACTIVITY_LIFE_CYCLE_TAG, "onDestroy");
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(Activity_Life_Cycle_TAG, "onResume");
+        Log.d(ACTIVITY_LIFE_CYCLE_TAG, "onResume");
 
     }
 

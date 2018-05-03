@@ -3,10 +3,12 @@ package com.example.admin.firstcode;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.admin.firstcode.Chapter2.ActivityLifeCycle;
+import com.example.admin.firstcode.Utils.ActivityCollector;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView;
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("MainActivity",getClass().getSimpleName());
+        ActivityCollector.addActivity(this);
         initView();
     }
 
@@ -31,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
         startActivity(intent);
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.remoteActivity(this);
     }
 }
