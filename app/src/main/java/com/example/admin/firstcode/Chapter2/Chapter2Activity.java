@@ -14,7 +14,7 @@ import com.example.admin.firstcode.R;
  * Created by admin on 2018/5/2.
  */
 
-public class ActivityLifeCycle extends AppCompatActivity implements View.OnClickListener {
+public class Chapter2Activity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tv_start_normal_activity;
     TextView tv_start_dialog_activity;

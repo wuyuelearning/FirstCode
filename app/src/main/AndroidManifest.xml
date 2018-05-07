@@ -16,10 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Chapter2.ActivityLifeCycle"/>
+
+
+        <activity android:name=".Chapter2.Chapter2Activity"/>
         <activity android:name=".Chapter2.NormalAcitivity"/>
         <activity android:name=".Chapter2.DialogActivity"
             android:theme="@style/Theme.AppCompat.Dialog"/>
+
+        <activity android:name=".Chapter3.Chapter3Activity"/>
+        <activity android:name=".Chapter3.ListView.ListViewActivity1"/>
+        <activity android:name=".Chapter3.ListView.ListViewActivity2"/>
+        <activity android:name=".Chapter3.ListView.ListViewActivity3"/>
+        <activity android:name=".Chapter3.RecyclerView.RecyclerViewAcrivity"/>
     </application>
 
 </manifest>
