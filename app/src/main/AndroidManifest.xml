@@ -28,6 +28,7 @@
         <activity android:name=".Chapter3.ListView.ListViewActivity2"/>
         <activity android:name=".Chapter3.ListView.ListViewActivity3"/>
         <activity android:name=".Chapter3.RecyclerView.RecyclerViewAcrivity"/>
+        <activity android:name=".Chapter3.Chat.ChatActivity"/>
     </application>
 
 </manifest>

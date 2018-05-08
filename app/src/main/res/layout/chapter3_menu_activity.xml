@@ -36,6 +36,15 @@
         android:layout_height="wrap_content"
         android:text="RecyclerView_User_Defined_Adapter"
         android:textSize="20dp"/>
+    <View
+        android:layout_width="10dp"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/tv_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chat"
+        android:textSize="20dp"/>
 
 
 

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.admin.firstcode.Chapter3.Chat.ChatActivity;
 import com.example.admin.firstcode.Chapter3.ListView.ListViewActivity1;
 import com.example.admin.firstcode.Chapter3.ListView.ListViewActivity2;
 import com.example.admin.firstcode.Chapter3.ListView.ListViewActivity3;
@@ -22,6 +23,7 @@ public class Chapter3Activity extends AppCompatActivity implements View.OnClickL
     private TextView tv_listView2;
     private TextView tv_listView3;
     private TextView tv_recyclerView;
+    private TextView tv_chat;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class Chapter3Activity extends AppCompatActivity implements View.OnClickL
         tv_listView3.setOnClickListener(this);
         tv_recyclerView=(TextView) findViewById(R.id.tv_recyclerView);
         tv_recyclerView.setOnClickListener(this);
+        tv_chat=(TextView) findViewById(R.id.tv_chat);
+        tv_chat.setOnClickListener(this);
 
     }
 
@@ -57,6 +61,9 @@ public class Chapter3Activity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_recyclerView:
                 intent = new Intent(this, RecyclerViewAcrivity.class);
+                break;
+            case R.id.tv_chat:
+                intent = new Intent(this, ChatActivity.class);
                 break;
 
         }
