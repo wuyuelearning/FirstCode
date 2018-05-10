@@ -9,36 +9,46 @@ import android.widget.TextView;
 
 import com.example.admin.firstcode.Chapter2.Chapter2Activity;
 import com.example.admin.firstcode.Chapter3.Chapter3Activity;
+import com.example.admin.firstcode.Chapter4.Chapter4Activity;
 import com.example.admin.firstcode.Utils.ActivityCollector;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView1;
     TextView textView2;
+    TextView textView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("MainActivity",getClass().getSimpleName());
+        Log.d("MainActivity", getClass().getSimpleName());
         ActivityCollector.addActivity(this);
         initView();
     }
 
-    private void initView(){
-        textView1 =(TextView)findViewById(R.id.text1);
+    private void initView() {
+        textView1 = (TextView) findViewById(R.id.text1);
         textView1.setOnClickListener(this);
-        textView2 =(TextView)findViewById(R.id.text2);
+        textView2 = (TextView) findViewById(R.id.text2);
         textView2.setOnClickListener(this);
+        textView3 = (TextView) findViewById(R.id.text3);
+        textView3.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View v) {
-        Intent intent  =null;
-        switch (v.getId()){
-            case R.id.text1 :
-                intent =new Intent(this,Chapter2Activity.class);
+        Intent intent = null;
+        switch (v.getId()) {
+            case R.id.text1:
+                intent = new Intent(this, Chapter2Activity.class);
                 break;
-            case R.id.text2 :
-                intent =new Intent(this,Chapter3Activity.class);
+            case R.id.text2:
+                intent = new Intent(this, Chapter3Activity.class);
+                break;
+            case R.id.text3:
+                intent = new Intent(this, Chapter4Activity.class);
+                break;
+            default:
                 break;
         }
         startActivity(intent);

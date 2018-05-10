@@ -45,6 +45,8 @@ public class Chapter2Activity extends AppCompatActivity implements View.OnClickL
             case R.id.tv_start_dialog_activity:
                 intent = new Intent(this, DialogActivity.class);
                 break;
+            default:
+                break;
         }
         startActivity(intent);
 

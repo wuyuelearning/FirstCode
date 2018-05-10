@@ -29,6 +29,9 @@
         <activity android:name=".Chapter3.ListView.ListViewActivity3"/>
         <activity android:name=".Chapter3.RecyclerView.RecyclerViewAcrivity"/>
         <activity android:name=".Chapter3.Chat.ChatActivity"/>
+        <activity android:name=".Chapter4.PadActivity"/>
+        <activity android:name=".Chapter4.PadActivity2"/>
+        <activity android:name=".Chapter4.Chapter4Activity"/>
     </application>
 
 </manifest>

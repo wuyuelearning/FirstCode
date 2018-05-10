@@ -39,9 +39,9 @@ public class Chapter3Activity extends AppCompatActivity implements View.OnClickL
         tv_listView2.setOnClickListener(this);
         tv_listView3 = (TextView) findViewById(R.id.tv_listView3);
         tv_listView3.setOnClickListener(this);
-        tv_recyclerView=(TextView) findViewById(R.id.tv_recyclerView);
+        tv_recyclerView = (TextView) findViewById(R.id.tv_recyclerView);
         tv_recyclerView.setOnClickListener(this);
-        tv_chat=(TextView) findViewById(R.id.tv_chat);
+        tv_chat = (TextView) findViewById(R.id.tv_chat);
         tv_chat.setOnClickListener(this);
 
     }
@@ -64,6 +64,8 @@ public class Chapter3Activity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_chat:
                 intent = new Intent(this, ChatActivity.class);
+                break;
+            default:
                 break;
 
         }

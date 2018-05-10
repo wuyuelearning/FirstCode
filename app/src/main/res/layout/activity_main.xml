@@ -22,5 +22,15 @@
         android:layout_height="wrap_content"
         android:text="Chapter3"
         android:textSize="20dp" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chapter4"
+        android:textSize="20dp" />
 
 </LinearLayout>
