@@ -10,12 +10,14 @@ import android.widget.TextView;
 import com.example.admin.firstcode.Chapter2.Chapter2Activity;
 import com.example.admin.firstcode.Chapter3.Chapter3Activity;
 import com.example.admin.firstcode.Chapter4.Chapter4Activity;
+import com.example.admin.firstcode.Chapter5.Chapter5Activity;
 import com.example.admin.firstcode.Utils.ActivityCollector;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView textView1;
     TextView textView2;
     TextView textView3;
+    TextView textView4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView2.setOnClickListener(this);
         textView3 = (TextView) findViewById(R.id.text3);
         textView3.setOnClickListener(this);
+        textView4 = (TextView) findViewById(R.id.text4);
+        textView4.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.text3:
                 intent = new Intent(this, Chapter4Activity.class);
+                break;
+            case R.id.text4:
+                intent = new Intent(this, Chapter5Activity.class);
                 break;
             default:
                 break;

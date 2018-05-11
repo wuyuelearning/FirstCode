@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.firstcode">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,24 +19,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Chapter2.Chapter2Activity" />
+        <activity android:name=".Chapter2.NormalAcitivity" />
+        <activity
+            android:name=".Chapter2.DialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".Chapter3.Chapter3Activity" />
+        <activity android:name=".Chapter3.ListView.ListViewActivity1" />
+        <activity android:name=".Chapter3.ListView.ListViewActivity2" />
+        <activity android:name=".Chapter3.ListView.ListViewActivity3" />
+        <activity android:name=".Chapter3.RecyclerView.RecyclerViewAcrivity" />
+        <activity android:name=".Chapter3.Chat.ChatActivity" />
+        <activity android:name=".Chapter4.BaseFragment.PadActivity" />
+        <activity android:name=".Chapter4.BaseFragment.PadActivity2" />
+        <activity android:name=".Chapter4.Chapter4Activity" />
+        <activity android:name=".Chapter4.NewsFragment.NewsActivity" />
+        <activity android:name=".Chapter4.NewsFragment.NewsContentActivity" />
+        <activity android:name=".Chapter5.Chapter5Activity" />
+        <activity android:name=".Chapter5.DynamicRegistrationActivity" />
 
-
-        <activity android:name=".Chapter2.Chapter2Activity"/>
-        <activity android:name=".Chapter2.NormalAcitivity"/>
-        <activity android:name=".Chapter2.DialogActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"/>
-
-        <activity android:name=".Chapter3.Chapter3Activity"/>
-        <activity android:name=".Chapter3.ListView.ListViewActivity1"/>
-        <activity android:name=".Chapter3.ListView.ListViewActivity2"/>
-        <activity android:name=".Chapter3.ListView.ListViewActivity3"/>
-        <activity android:name=".Chapter3.RecyclerView.RecyclerViewAcrivity"/>
-        <activity android:name=".Chapter3.Chat.ChatActivity"/>
-        <activity android:name=".Chapter4.BaseFragment.PadActivity"/>
-        <activity android:name=".Chapter4.BaseFragment.PadActivity2"/>
-        <activity android:name=".Chapter4.Chapter4Activity"/>
-        <activity android:name=".Chapter4.NewsFragment.NewsActivity"/>
-        <activity android:name=".Chapter4.NewsFragment.NewsContentActivity"/>
+        <receiver
+            android:name=".Chapter5.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Chapter5.BootCompleteReceiver2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
