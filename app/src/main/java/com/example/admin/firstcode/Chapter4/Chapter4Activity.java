@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.admin.firstcode.Chapter4.BaseFragment.PadActivity;
+import com.example.admin.firstcode.Chapter4.BaseFragment.PadActivity2;
+import com.example.admin.firstcode.Chapter4.NewsFragment.NewsActivity;
 import com.example.admin.firstcode.R;
 
 /**
@@ -16,6 +19,7 @@ import com.example.admin.firstcode.R;
 public class Chapter4Activity extends AppCompatActivity implements View.OnClickListener {
     TextView textView1;
     TextView textView2;
+    TextView textView3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +29,8 @@ public class Chapter4Activity extends AppCompatActivity implements View.OnClickL
         textView1.setOnClickListener(this);
         textView2 = (TextView) findViewById(R.id.tv_fragment2);
         textView2.setOnClickListener(this);
+        textView3 = (TextView) findViewById(R.id.tv_fragment3);
+        textView3.setOnClickListener(this);
     }
 
     @Override
@@ -36,6 +42,9 @@ public class Chapter4Activity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_fragment2:
                 intent = new Intent(this, PadActivity2.class);
+                break;
+            case R.id.tv_fragment3:
+                intent = new Intent(this, NewsActivity.class);
                 break;
             default:
                 break;

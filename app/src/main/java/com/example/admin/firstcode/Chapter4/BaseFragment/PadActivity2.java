@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter4;
+package com.example.admin.firstcode.Chapter4.BaseFragment;
 
 
 import android.os.Bundle;
@@ -45,8 +45,6 @@ public class PadActivity2 extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
-
-
     }
 
     private void replayFragment(Fragment fragment) {

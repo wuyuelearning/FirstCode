@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fg_left_fragment"
-        android:name="com.example.admin.firstcode.Chapter4.LeftFragment"
+        android:name="com.example.admin.firstcode.Chapter4.BaseFragment.LeftFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />

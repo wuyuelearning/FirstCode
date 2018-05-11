@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter4;
+package com.example.admin.firstcode.Chapter4.BaseFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import com.example.admin.firstcode.R;
  * Created by wuyue on 2018/5/10.
  * 静态加载fragment 例如在chapter4_pad_activity.xml
  * 中 通过
- * android:name="com.example.admin.firstcode.Chapter4.LeftFragment"
+ * android:name="com.example.admin.firstcode.Chapter4.BaseFragment.LeftFragment"
  * 静态加载fragment
  */
 
