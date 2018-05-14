@@ -12,6 +12,14 @@
     <View
         android:layout_width="10dp"
         android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/tv_broadcast2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My BroadcastReceiver"
+        android:textSize="20dp"/>
+
+
 
 
 </LinearLayout>

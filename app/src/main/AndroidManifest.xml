@@ -36,10 +36,11 @@
         <activity android:name=".Chapter4.NewsFragment.NewsActivity" />
         <activity android:name=".Chapter4.NewsFragment.NewsContentActivity" />
         <activity android:name=".Chapter5.Chapter5Activity" />
-        <activity android:name=".Chapter5.DynamicRegistrationActivity" />
+        <activity android:name=".Chapter5.BaseBroadcast.DynamicRegistrationActivity" />
+        <activity android:name=".Chapter5.DefinedBroadcast.MyBroadcastReceiverActivity" />
 
         <receiver
-            android:name=".Chapter5.BootCompleteReceiver"
+            android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -47,11 +48,19 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".Chapter5.BootCompleteReceiver2"
+            android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver2"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".Chapter5.DefinedBroadcast.MyBroadcastReceiver"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.example.admin.firstcode.Chapter5.DefinedBroadcast.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
     </application>
