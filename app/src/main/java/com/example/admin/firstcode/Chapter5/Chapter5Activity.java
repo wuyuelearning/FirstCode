@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.admin.firstcode.Chapter5.BaseBroadcast.DynamicRegistrationActivity;
+import com.example.admin.firstcode.Chapter5.BroadcastPractice.LoginActivity;
 import com.example.admin.firstcode.Chapter5.DefinedBroadcast.MyBroadcastReceiverActivity;
 import com.example.admin.firstcode.R;
 
@@ -18,6 +19,7 @@ import com.example.admin.firstcode.R;
 public class Chapter5Activity extends AppCompatActivity implements View.OnClickListener {
     private TextView text1;
     private TextView text2;
+    private TextView text3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class Chapter5Activity extends AppCompatActivity implements View.OnClickL
         text1.setOnClickListener(this);
         text2 = (TextView) findViewById(R.id.tv_broadcast2);
         text2.setOnClickListener(this);
+        text3 = (TextView) findViewById(R.id.tv_broadcast3);
+        text3.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +42,9 @@ public class Chapter5Activity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_broadcast2:
                 intent =new Intent(this,MyBroadcastReceiverActivity.class);
+                break;
+            case R.id.tv_broadcast3:
+                intent =new Intent(this,LoginActivity.class);
                 break;
             default:
                 break;

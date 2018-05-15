@@ -38,6 +38,9 @@
         <activity android:name=".Chapter5.Chapter5Activity" />
         <activity android:name=".Chapter5.BaseBroadcast.DynamicRegistrationActivity" />
         <activity android:name=".Chapter5.DefinedBroadcast.MyBroadcastReceiverActivity" />
+        <activity android:name=".Chapter5.BroadcastPractice.LoginActivity"/>
+        <activity android:name=".Chapter5.BroadcastPractice.OfflineActivity"/>
+        <activity android:name=".Chapter5.BroadcastPractice.BaseActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"

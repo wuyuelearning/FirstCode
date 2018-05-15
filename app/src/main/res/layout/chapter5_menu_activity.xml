@@ -10,13 +10,22 @@
         android:text="Dynamic Registration"
         android:textSize="20dp"/>
     <View
-        android:layout_width="10dp"
-        android:layout_height="10dp"/>
+    android:layout_width="10dp"
+    android:layout_height="10dp"/>
     <TextView
         android:id="@+id/tv_broadcast2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My BroadcastReceiver"
+        android:textSize="20dp"/>
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp"/>
+    <TextView
+        android:id="@+id/tv_broadcast3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Force Offline"
         android:textSize="20dp"/>
 
 
