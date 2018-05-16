@@ -11,6 +11,7 @@ import com.example.admin.firstcode.Chapter2.Chapter2Activity;
 import com.example.admin.firstcode.Chapter3.Chapter3Activity;
 import com.example.admin.firstcode.Chapter4.Chapter4Activity;
 import com.example.admin.firstcode.Chapter5.Chapter5Activity;
+import com.example.admin.firstcode.Chapter6.Chapter6Activity;
 import com.example.admin.firstcode.Utils.ActivityCollector;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView2;
     TextView textView3;
     TextView textView4;
+    TextView textView5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView3.setOnClickListener(this);
         textView4 = (TextView) findViewById(R.id.text4);
         textView4.setOnClickListener(this);
+        textView5 = (TextView) findViewById(R.id.text5);
+        textView5.setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.text4:
                 intent = new Intent(this, Chapter5Activity.class);
+                break;
+            case R.id.text5:
+                intent = new Intent(this, Chapter6Activity.class);
                 break;
             default:
                 break;

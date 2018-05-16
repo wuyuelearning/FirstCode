@@ -41,6 +41,9 @@
         <activity android:name=".Chapter5.BroadcastPractice.LoginActivity"/>
         <activity android:name=".Chapter5.BroadcastPractice.OfflineActivity"/>
         <activity android:name=".Chapter5.BroadcastPractice.BaseActivity"/>
+        <activity android:name=".Chapter6.Chapter6Activity"/>
+        <activity android:name=".Chapter6.SaveToFileActivity"/>
+        <activity android:name=".Chapter6.SharedPreferencesActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
