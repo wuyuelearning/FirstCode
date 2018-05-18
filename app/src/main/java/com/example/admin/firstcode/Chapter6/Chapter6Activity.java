@@ -1,12 +1,16 @@
 package com.example.admin.firstcode.Chapter6;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.admin.firstcode.Chapter6.EarlyPartData.SaveToFileActivity;
+import com.example.admin.firstcode.Chapter6.EarlyPartData.SharedPreferencesActivity;
+import com.example.admin.firstcode.Chapter6.SQLite.SQLiteDatabaseActivity;
 import com.example.admin.firstcode.R;
 
 /**
@@ -17,6 +21,7 @@ public class Chapter6Activity extends AppCompatActivity implements View.OnClickL
 
     TextView text1;
     TextView text2;
+    TextView text3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +33,9 @@ public class Chapter6Activity extends AppCompatActivity implements View.OnClickL
 
         text2 =(TextView)findViewById(R.id.tv_save2);
         text2.setOnClickListener(this);
+
+        text3 =(TextView)findViewById(R.id.tv_save3);
+        text3.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +47,10 @@ public class Chapter6Activity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_save2:
                 intent = new Intent(this, SharedPreferencesActivity.class);
+                break;
+
+            case R.id.tv_save3:
+                intent = new Intent(this, SQLiteDatabaseActivity.class);
                 break;
 
             default:

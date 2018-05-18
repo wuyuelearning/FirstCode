@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter6;
+package com.example.admin.firstcode.Chapter6.EarlyPartData;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

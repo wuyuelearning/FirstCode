@@ -42,8 +42,9 @@
         <activity android:name=".Chapter5.BroadcastPractice.OfflineActivity"/>
         <activity android:name=".Chapter5.BroadcastPractice.BaseActivity"/>
         <activity android:name=".Chapter6.Chapter6Activity"/>
-        <activity android:name=".Chapter6.SaveToFileActivity"/>
-        <activity android:name=".Chapter6.SharedPreferencesActivity"/>
+        <activity android:name=".Chapter6.EarlyPartData.SaveToFileActivity"/>
+        <activity android:name=".Chapter6.EarlyPartData.SharedPreferencesActivity"/>
+        <activity android:name=".Chapter6.SQLite.SQLiteDatabaseActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
