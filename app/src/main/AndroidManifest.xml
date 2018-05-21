@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -38,13 +40,16 @@
         <activity android:name=".Chapter5.Chapter5Activity" />
         <activity android:name=".Chapter5.BaseBroadcast.DynamicRegistrationActivity" />
         <activity android:name=".Chapter5.DefinedBroadcast.MyBroadcastReceiverActivity" />
-        <activity android:name=".Chapter5.BroadcastPractice.LoginActivity"/>
-        <activity android:name=".Chapter5.BroadcastPractice.OfflineActivity"/>
-        <activity android:name=".Chapter5.BroadcastPractice.BaseActivity"/>
-        <activity android:name=".Chapter6.Chapter6Activity"/>
-        <activity android:name=".Chapter6.EarlyPartData.SaveToFileActivity"/>
-        <activity android:name=".Chapter6.EarlyPartData.SharedPreferencesActivity"/>
-        <activity android:name=".Chapter6.SQLite.SQLiteDatabaseActivity"/>
+        <activity android:name=".Chapter5.BroadcastPractice.LoginActivity" />
+        <activity android:name=".Chapter5.BroadcastPractice.OfflineActivity" />
+        <activity android:name=".Chapter5.BroadcastPractice.BaseActivity" />
+        <activity android:name=".Chapter6.Chapter6Activity" />
+        <activity android:name=".Chapter6.EarlyPartData.SaveToFileActivity" />
+        <activity android:name=".Chapter6.EarlyPartData.SharedPreferencesActivity" />
+        <activity android:name=".Chapter6.SQLite.SQLiteDatabaseActivity" />
+        <activity android:name=".Chapter7.Chapter7Activity" />
+        <activity android:name=".Chapter7.RuntimePermissionActivity" />
+        <activity android:name=".Chapter7.ReadContactActivity" />
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
@@ -62,14 +67,20 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
-        <receiver android:name=".Chapter5.DefinedBroadcast.MyBroadcastReceiver"
-            android:exported="true"
-            android:enabled="true">
+        <receiver
+            android:name=".Chapter5.DefinedBroadcast.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter android:priority="100">
-                <action android:name="com.example.admin.firstcode.Chapter5.DefinedBroadcast.MY_BROADCAST"/>
+                <action android:name="com.example.admin.firstcode.Chapter5.DefinedBroadcast.MY_BROADCAST" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name=".Chapter6.SQLite.MyContentProvider"
+            android:authorities="com.example.admin.firstcode.Chapter6.SQLite"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
