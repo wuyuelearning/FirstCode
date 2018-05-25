@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -50,6 +52,10 @@
         <activity android:name=".Chapter7.Chapter7Activity" />
         <activity android:name=".Chapter7.RuntimePermissionActivity" />
         <activity android:name=".Chapter7.ReadContactActivity" />
+        <activity android:name=".Chapter8.Chapter8Activity"/>
+        <activity android:name=".Chapter8.Notification.NotificationActivity"/>
+        <activity android:name=".Chapter8.Notification.NoticationOtherActivity"/>
+        <activity android:name=".Chapter8.CameraAlbum.CameraAlbumActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
@@ -80,7 +86,21 @@
             android:name=".Chapter6.SQLite.MyContentProvider"
             android:authorities="com.example.admin.firstcode.Chapter6.SQLite"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true">
+
+        </provider>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.admin.firstcode.Chapter8.CameraAlbum.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+
+        </provider>
+
     </application>
 
 </manifest>
