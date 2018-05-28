@@ -56,6 +56,8 @@
         <activity android:name=".Chapter8.Notification.NotificationActivity"/>
         <activity android:name=".Chapter8.Notification.NoticationOtherActivity"/>
         <activity android:name=".Chapter8.CameraAlbum.CameraAlbumActivity"/>
+        <activity android:name=".Chapter8.MediaPlayer.PlayAudioActivity"/>
+        <activity android:name=".Chapter8.MediaPlayer.PlayVideoActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"

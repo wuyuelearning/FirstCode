@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
+<!--在《第一行代码》第二版中 P297  path 可以为空 表示整个SD卡进行共享  但是实际path不能为空，可以填/ 或
+  小米6手机 本地的路径 Android/data/com.example.admin.firstcode/cache 表示仅共享这个路径
+-->
 <paths xmlns:android="http://schemas.android.com/apk/res-auto">
 
     <external-path
