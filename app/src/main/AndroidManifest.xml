@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -58,6 +59,9 @@
         <activity android:name=".Chapter8.CameraAlbum.CameraAlbumActivity"/>
         <activity android:name=".Chapter8.MediaPlayer.PlayAudioActivity"/>
         <activity android:name=".Chapter8.MediaPlayer.PlayVideoActivity"/>
+        <activity android:name=".Chapter9.Chapter9Activity"/>
+        <activity android:name=".Chapter9.WebViewActivity"/>
+        <activity android:name=".Chapter9.HttpURLConnectActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"

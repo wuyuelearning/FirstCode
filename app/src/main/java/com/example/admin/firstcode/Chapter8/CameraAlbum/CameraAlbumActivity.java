@@ -81,6 +81,7 @@ public class CameraAlbumActivity extends AppCompatActivity {
 
     private void takePhoto() {
 
+        //  创建File 对象， 用于存储拍照后的图片
         File outputImage = new File(getExternalCacheDir(), "chapter8_output_image.jpg");
         //  getExternalCacheDir().toString()：   /storage/emulated/0/Android/data/com.example.admin.firstcode/cache
         //  小米6手机中的存放路径是 Android / data/ com.example.admin.firstcode/cache
@@ -101,6 +102,7 @@ public class CameraAlbumActivity extends AppCompatActivity {
         }
 
         try {
+            //  启动相机程序
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
             intent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
             startActivityForResult(intent, TAKE_PHOTO);
@@ -117,11 +119,11 @@ public class CameraAlbumActivity extends AppCompatActivity {
     private void handleImageOnKitKat(Intent data) {
         String imagePath = null;
         Uri uri = data.getData();
-
         if (DocumentsContract.isDocumentUri(this, uri)) {
+            //  如果是document类型的uri，则通过document id处理
             String docId = DocumentsContract.getDocumentId(uri);
             if ("com.android.providers.media.documents".equals(uri.getAuthority())) {
-                String id = docId.split(":")[1];
+                String id = docId.split(":")[1];    //  解析出数字格式的id
                 String selection = MediaStore.Images.Media._ID + "=" + id;
                 imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
             } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
@@ -129,8 +131,10 @@ public class CameraAlbumActivity extends AppCompatActivity {
                 imagePath = getImagePath(contentUri, null);
             }
         } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            //  如果是 content 类型的uri ，则使用普通的方式处理
             imagePath = getImagePath(uri, null);
         } else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            //  如果是file 类型的uri ，直接获取图片的路径即可
             imagePath = uri.getPath();
         }
         displayImage(imagePath);
@@ -153,6 +157,7 @@ public class CameraAlbumActivity extends AppCompatActivity {
 
     private String getImagePath(Uri uri, String selection) {
         String path = null;
+        //  通过uri 和 selection 来获取真实的图片路径
         Cursor cursor = getContentResolver().query(uri, null, selection, null, null);
         if (cursor != null) {
             if (cursor.moveToFirst()) {
@@ -168,7 +173,7 @@ public class CameraAlbumActivity extends AppCompatActivity {
 
         Intent intent = new Intent("android.intent.action.GET_CONTENT");
         intent.setType("image/*");
-        startActivityForResult(intent, CHOOSE_PHOTO);
+        startActivityForResult(intent, CHOOSE_PHOTO);  //  打开相册
     }
 
     @Override
@@ -207,9 +212,11 @@ public class CameraAlbumActivity extends AppCompatActivity {
 
             case CHOOSE_PHOTO: {
                 if (resultCode == RESULT_OK) {
+                    // 判断手机系统版本号
                     if (Build.VERSION.SDK_INT >= 19) {
                         handleImageOnKitKat(data);
                     } else {
+                        // 4.4以下的系统使用这个方法处理图片
                         handleImageBeforeKitKat(data);
                     }
                 }
