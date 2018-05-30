@@ -60,8 +60,10 @@
         <activity android:name=".Chapter8.MediaPlayer.PlayAudioActivity"/>
         <activity android:name=".Chapter8.MediaPlayer.PlayVideoActivity"/>
         <activity android:name=".Chapter9.Chapter9Activity"/>
-        <activity android:name=".Chapter9.WebViewActivity"/>
-        <activity android:name=".Chapter9.HttpURLConnectActivity"/>
+        <activity android:name=".Chapter9.HttpConnect.WebViewActivity"/>
+        <activity android:name=".Chapter9.HttpConnect.HttpConnectActivity"/>
+        <activity android:name=".Chapter9.Parse.ParseXMLActivity"/>
+        <activity android:name=".Chapter9.Parse.ParseJsonActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"

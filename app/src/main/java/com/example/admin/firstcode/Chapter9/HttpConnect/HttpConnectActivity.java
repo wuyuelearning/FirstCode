@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter9;
+package com.example.admin.firstcode.Chapter9.HttpConnect;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,11 +16,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 /**
  * Created by wuyue on 2018/5/29.
  */
 
-public class HttpURLConnectActivity extends AppCompatActivity implements View.OnClickListener {
+public class HttpConnectActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tv_response_text;
 
@@ -28,8 +32,10 @@ public class HttpURLConnectActivity extends AppCompatActivity implements View.On
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter9_http_url_connection_activity);
-        Button btn_send_request = findViewById(R.id.btn_send_request);
-        btn_send_request.setOnClickListener(this);
+        Button btn_send_request_http_url = findViewById(R.id.btn_send_request_http_url);
+        btn_send_request_http_url.setOnClickListener(this);
+        Button btn_send_request_ok_http = findViewById(R.id.btn_send_request_ok_http);
+        btn_send_request_ok_http.setOnClickListener(this);
         tv_response_text = findViewById(R.id.tv_response_text);
 
     }
@@ -37,8 +43,11 @@ public class HttpURLConnectActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_send_request:
+            case R.id.btn_send_request_http_url:
                 sendRequestWithHttpURLConnection();
+                break;
+            case R.id.btn_send_request_ok_http:
+                sendRequestWithOkHttp();
                 break;
             default:
                 break;
@@ -80,6 +89,27 @@ public class HttpURLConnectActivity extends AppCompatActivity implements View.On
                             httpURLConnection.disconnect();
                         }
                     }
+                }
+            }
+        }).start();
+    }
+
+
+    private void sendRequestWithOkHttp(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    OkHttpClient client =new OkHttpClient();
+                    Request request = new Request.Builder()
+                            .url("http://www.baidu.com")
+                            .build();
+
+                    Response response = client.newCall(request).execute();
+                    String responseData  = response.body().string();
+                    showResponse(responseData);
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
             }
         }).start();
