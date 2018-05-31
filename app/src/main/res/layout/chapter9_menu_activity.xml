@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/chapter9_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="webView"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
     <View
         android:layout_width="wrap_content"
-        android:layout_height="10dp"/>
+        android:layout_height="10dp" />
 
     <TextView
         android:id="@+id/chapter9_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HttpRULConnection"
-        android:textSize="20sp"/>
+        android:text="Http RUL Connect"
+        android:textSize="20sp" />
 
     <View
         android:layout_width="wrap_content"
-        android:layout_height="10dp"/>
+        android:layout_height="10dp" />
 
     <TextView
         android:id="@+id/chapter9_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Parse XML"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
     <View
         android:layout_width="wrap_content"
-        android:layout_height="10dp"/>
+        android:layout_height="10dp" />
 
     <TextView
         android:id="@+id/chapter9_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Parse JSON"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/chapter9_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Http RUL Connect Util"
+        android:textSize="20sp" />
 
 
 </LinearLayout>

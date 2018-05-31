@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="send request Http Url" />
+
     <Button
-        android:id="@+id/btn_send_request_ok_http"
+        android:id="@+id/btn_send_request_ok_http_url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="send request Ok Http" />
@@ -20,7 +21,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tv_response_text"
+            android:id="@+id/tv_response_text_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </ScrollView>

@@ -26,17 +26,17 @@ import okhttp3.Response;
 
 public class HttpConnectActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView tv_response_text;
+    TextView tv_response_text_url;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chapter9_http_url_connection_activity);
+        setContentView(R.layout.chapter9_http_url_activity);
         Button btn_send_request_http_url = findViewById(R.id.btn_send_request_http_url);
         btn_send_request_http_url.setOnClickListener(this);
-        Button btn_send_request_ok_http = findViewById(R.id.btn_send_request_ok_http);
-        btn_send_request_ok_http.setOnClickListener(this);
-        tv_response_text = findViewById(R.id.tv_response_text);
+        Button btn_send_request_ok_http_url = findViewById(R.id.btn_send_request_ok_http_url);
+        btn_send_request_ok_http_url.setOnClickListener(this);
+        tv_response_text_url = findViewById(R.id.tv_response_text_url);
 
     }
 
@@ -46,7 +46,7 @@ public class HttpConnectActivity extends AppCompatActivity implements View.OnCli
             case R.id.btn_send_request_http_url:
                 sendRequestWithHttpURLConnection();
                 break;
-            case R.id.btn_send_request_ok_http:
+            case R.id.btn_send_request_ok_http_url:
                 sendRequestWithOkHttp();
                 break;
             default:
@@ -60,32 +60,32 @@ public class HttpConnectActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void run() {
                 HttpURLConnection httpURLConnection = null;
-                BufferedReader reader =null;
+                BufferedReader reader = null;
                 try {
                     URL url = new URL("http://www.baidu.com");
-                    httpURLConnection =(HttpURLConnection) url.openConnection();
+                    httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setRequestMethod("GET");
                     httpURLConnection.setConnectTimeout(8000);
                     httpURLConnection.setReadTimeout(8000);
                     InputStream inputStream = httpURLConnection.getInputStream();
                     // 对获取的输入流进行读取
-                    reader =new BufferedReader(new InputStreamReader(inputStream));
-                    StringBuilder builder =new StringBuilder();
+                    reader = new BufferedReader(new InputStreamReader(inputStream));
+                    StringBuilder builder = new StringBuilder();
                     String line;
-                    while((line = reader.readLine())!=null){
+                    while ((line = reader.readLine()) != null) {
                         builder.append(line);
                     }
                     showResponse(builder.toString());
-                } catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    if(reader != null){
+                    if (reader != null) {
                         try {
                             reader.close();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        if(httpURLConnection != null){
+                        if (httpURLConnection != null) {
                             httpURLConnection.disconnect();
                         }
                     }
@@ -95,32 +95,32 @@ public class HttpConnectActivity extends AppCompatActivity implements View.OnCli
     }
 
 
-    private void sendRequestWithOkHttp(){
+    private void sendRequestWithOkHttp() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
-                    OkHttpClient client =new OkHttpClient();
+                try {
+                    OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
                             .url("http://www.baidu.com")
                             .build();
 
                     Response response = client.newCall(request).execute();
-                    String responseData  = response.body().string();
+                    String responseData = response.body().string();
                     showResponse(responseData);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }).start();
     }
 
-    private void showResponse(final String response){
+    private void showResponse(final String response) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //  在这里进行UI操作，将结果显示在界面上
-                tv_response_text.setText(response);
+                // 切换线程 在这里进行UI操作，将结果显示在界面上
+                tv_response_text_url.setText(response);
             }
         });
     }
