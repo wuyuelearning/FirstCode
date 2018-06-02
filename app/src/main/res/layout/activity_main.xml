@@ -82,5 +82,15 @@
         android:layout_height="wrap_content"
         android:text="Chapter9"
         android:textSize="20dp" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp" />
+
+    <TextView
+        android:id="@+id/text9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chapter10"
+        android:textSize="20dp" />
 
 </LinearLayout>

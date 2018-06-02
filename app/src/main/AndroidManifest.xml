@@ -65,6 +65,8 @@
         <activity android:name=".Chapter9.Parse.ParseXMLActivity" />
         <activity android:name=".Chapter9.Parse.ParseJsonActivity" />
         <activity android:name=".Chapter9.HttpConnectUtil.HttpUtilActivity" />
+        <activity android:name=".Chapter10.Chapter10Activity"/>
+        <activity android:name=".Chapter10.RunnableTestActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"

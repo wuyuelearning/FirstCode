@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.admin.firstcode.Chapter10.Chapter10Activity;
 import com.example.admin.firstcode.Chapter2.Chapter2Activity;
 import com.example.admin.firstcode.Chapter3.Chapter3Activity;
 import com.example.admin.firstcode.Chapter4.Chapter4Activity;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView6;
     TextView textView7;
     TextView textView8;
+    TextView textView9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView7 = (TextView) findViewById(R.id.text7);
         textView7.setOnClickListener(this);
         textView8 = (TextView) findViewById(R.id.text8);
+        textView8.setOnClickListener(this);
+        textView8 = (TextView) findViewById(R.id.text9);
         textView8.setOnClickListener(this);
     }
 
@@ -82,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.text8:
                 intent = new Intent(this, Chapter9Activity.class);
+                break;
+            case R.id.text9:
+                intent = new Intent(this, Chapter10Activity.class);
                 break;
             default:
                 break;
