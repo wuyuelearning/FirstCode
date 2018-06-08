@@ -65,8 +65,9 @@
         <activity android:name=".Chapter9.Parse.ParseXMLActivity" />
         <activity android:name=".Chapter9.Parse.ParseJsonActivity" />
         <activity android:name=".Chapter9.HttpConnectUtil.HttpUtilActivity" />
-        <activity android:name=".Chapter10.Chapter10Activity"/>
-        <activity android:name=".Chapter10.RunnableTestActivity"/>
+        <activity android:name=".Chapter10.Chapter10Activity" />
+        <activity android:name=".Chapter10.RunnableTestActivity" />
+        <activity android:name=".Chapter10.ServiceActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
@@ -97,10 +98,7 @@
             android:name=".Chapter6.SQLite.MyContentProvider"
             android:authorities="com.example.admin.firstcode.Chapter6.SQLite"
             android:enabled="true"
-            android:exported="true">
-
-        </provider>
-
+            android:exported="true"></provider>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.admin.firstcode.Chapter8.CameraAlbum.fileprovider"
@@ -109,9 +107,13 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-
         </provider>
 
+        <service android:name=".Chapter10.MyService"
+            android:enabled="true"
+            android:exported="true">
+
+        </service>
     </application>
 
 </manifest>
