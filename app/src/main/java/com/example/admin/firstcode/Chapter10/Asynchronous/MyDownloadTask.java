@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter10;
+package com.example.admin.firstcode.Chapter10.Asynchronous;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -8,7 +8,7 @@ import android.widget.Toast;
  * Created by wuyue on 2018/6/7.
  */
 
-public class DownloadTask extends AsyncTask<Void ,Integer,Boolean>{
+public class MyDownloadTask extends AsyncTask<Void ,Integer,Boolean>{
     ProgressDialog progressDialog;
     @Override
     protected void onPreExecute() {

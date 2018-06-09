@@ -66,8 +66,9 @@
         <activity android:name=".Chapter9.Parse.ParseJsonActivity" />
         <activity android:name=".Chapter9.HttpConnectUtil.HttpUtilActivity" />
         <activity android:name=".Chapter10.Chapter10Activity" />
-        <activity android:name=".Chapter10.RunnableTestActivity" />
-        <activity android:name=".Chapter10.ServiceActivity"/>
+        <activity android:name=".Chapter10.Asynchronous.RunnableTestActivity" />
+        <activity android:name=".Chapter10.Service.ServiceActivity"/>
+        <activity android:name=".Chapter10.Download.DownloadActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
@@ -109,10 +110,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <service android:name=".Chapter10.MyService"
+        <service android:name=".Chapter10.Service.MyService"
             android:enabled="true"
             android:exported="true">
-
+        </service>
+        <service android:name=".Chapter10.Service.MyIntentService"/>
+        <service android:name=".Chapter10.Download.DownloadService"
+            android:enabled="true"
+            android:exported="true">
         </service>
     </application>
 

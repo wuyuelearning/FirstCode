@@ -7,11 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.admin.firstcode.Chapter9.HttpConnect.HttpConnectActivity;
-import com.example.admin.firstcode.Chapter9.HttpConnect.WebViewActivity;
-import com.example.admin.firstcode.Chapter9.HttpConnectUtil.HttpUtilActivity;
-import com.example.admin.firstcode.Chapter9.Parse.ParseJsonActivity;
-import com.example.admin.firstcode.Chapter9.Parse.ParseXMLActivity;
+import com.example.admin.firstcode.Chapter10.Asynchronous.RunnableTestActivity;
+import com.example.admin.firstcode.Chapter10.Service.ServiceActivity;
 import com.example.admin.firstcode.R;
 
 

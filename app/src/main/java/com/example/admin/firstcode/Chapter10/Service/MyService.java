@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter10;
+package com.example.admin.firstcode.Chapter10.Service;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.admin.firstcode.Chapter10.Service.ServiceActivity;
 import com.example.admin.firstcode.R;
 
 /**

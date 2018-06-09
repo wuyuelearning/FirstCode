@@ -1,4 +1,4 @@
-package com.example.admin.firstcode.Chapter10;
+package com.example.admin.firstcode.Chapter10.Service;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -30,11 +31,13 @@ public class ServiceActivity  extends AppCompatActivity implements OnClickListen
         Button btn_stop_service =findViewById(R.id.btn_stop_service);
         Button btn_bind_service =findViewById(R.id.btn_bind_service);
         Button btn_unbind_service =findViewById(R.id.btn_unbind_service);
+        Button btn_start_intent_service =findViewById(R.id.btn_start_intent_service);
 
         btn_start_service.setOnClickListener(this);
         btn_stop_service.setOnClickListener(this);
         btn_bind_service.setOnClickListener(this);
         btn_unbind_service.setOnClickListener(this);
+        btn_start_intent_service.setOnClickListener(this);
     }
 
     private ServiceConnection connection =new ServiceConnection(){
@@ -72,6 +75,13 @@ public class ServiceActivity  extends AppCompatActivity implements OnClickListen
             }
             case R.id.btn_unbind_service :{
                 unbindService(connection);  //  解绑服务
+                break;
+            }
+            case R.id.btn_start_intent_service:{
+                //  打印主线程
+                Log.d("ServiceActivity","Thread id is "+Thread.currentThread().getId());
+                Intent intentService =new Intent(this,MyIntentService.class);
+                startService(intentService);
                 break;
             }
             default:
