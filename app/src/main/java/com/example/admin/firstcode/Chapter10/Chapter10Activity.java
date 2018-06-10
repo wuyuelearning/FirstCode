@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.admin.firstcode.Chapter10.Asynchronous.RunnableTestActivity;
+import com.example.admin.firstcode.Chapter10.Download.DownloadActivity;
 import com.example.admin.firstcode.Chapter10.Service.ServiceActivity;
 import com.example.admin.firstcode.R;
 
@@ -20,6 +21,7 @@ public class Chapter10Activity extends AppCompatActivity implements View.OnClick
 
     TextView text1;
     TextView text2;
+    TextView text3;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,8 @@ public class Chapter10Activity extends AppCompatActivity implements View.OnClick
         text1.setOnClickListener(this);
         text2  = findViewById(R.id.chapter10_2);
         text2.setOnClickListener(this);
+        text3  = findViewById(R.id.chapter10_3);
+        text3.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +44,9 @@ public class Chapter10Activity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.chapter10_2:
                 intent = new Intent(this, ServiceActivity.class);
+                break;
+            case R.id.chapter10_3:
+                intent = new Intent(this, DownloadActivity.class);
                 break;
 
             default:
