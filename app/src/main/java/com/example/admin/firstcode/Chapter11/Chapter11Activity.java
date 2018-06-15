@@ -16,6 +16,7 @@ import com.example.admin.firstcode.R;
 public class Chapter11Activity extends AppCompatActivity implements View.OnClickListener {
 
     TextView text1;
+    TextView text2;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +25,8 @@ public class Chapter11Activity extends AppCompatActivity implements View.OnClick
 
         text1 = (TextView) findViewById(R.id.tv_chapter11_1);
         text1.setOnClickListener(this);
+        text2 = (TextView) findViewById(R.id.tv_chapter11_2);
+        text2.setOnClickListener(this);
 
     }
 
@@ -33,6 +36,9 @@ public class Chapter11Activity extends AppCompatActivity implements View.OnClick
         switch (v.getId()) {
             case R.id.tv_chapter11_1:
                 intent = new Intent(this, LBSTestActivity.class);
+                break;
+            case R.id.tv_chapter11_2:
+                intent = new Intent(this, MapActivity.class);
                 break;
             default:
                 break;

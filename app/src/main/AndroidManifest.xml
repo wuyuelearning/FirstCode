@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="DklZe1pQPOWZKDZLzjVrQVujigNfzUep" />
+            android:value="u23EEjvEa1fKHkVz9wYoS8asfiNwtYRf" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -85,6 +85,7 @@
         <activity android:name=".Chapter10.Download.DownloadActivity" />
         <activity android:name=".Chapter11.Chapter11Activity" />
         <activity android:name=".Chapter11.LBSTestActivity" />
+        <activity android:name=".Chapter11.MapActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"

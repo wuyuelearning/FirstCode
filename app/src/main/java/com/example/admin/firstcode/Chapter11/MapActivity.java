@@ -16,55 +16,81 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.MapStatusUpdate;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.model.LatLng;
 import com.example.admin.firstcode.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * Created by wuyue on 2018/6/13.
+ * Created by wuyue on 2018/6/15.
  */
 
-public class LBSTestActivity extends AppCompatActivity {
-    private TextView textView;
+public class MapActivity extends AppCompatActivity {
+
     private LocationClient mLocationClient;
+    private MapView mMapView;
+    private BaiduMap baiduMap;
+    private boolean isFirstLocate = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mLocationClient = new LocationClient(getApplicationContext());
-        mLocationClient.registerLocationListener(new MyLocationListener());
+        mLocationClient.registerLocationListener(new MapActivity.MyLocationListener());
         SDKInitializer.initialize(getApplicationContext());
-        setContentView(R.layout.chapter11_lbs_test_activity);
-        textView = (TextView) findViewById(R.id.tv_my_position);
+        setContentView(R.layout.chapter11_map_activity);
+        mMapView = (MapView) findViewById(R.id.mv_map);
+        baiduMap = mMapView.getMap();
+        baiduMap.setMyLocationEnabled(true);
 
         List<String> list = new ArrayList<>();
 
-        if (ContextCompat.checkSelfPermission(LBSTestActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(MapActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             list.add(Manifest.permission.ACCESS_FINE_LOCATION);
         }
-        if (ContextCompat.checkSelfPermission(LBSTestActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(MapActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             list.add(Manifest.permission.READ_PHONE_STATE);
         }
-        if (ContextCompat.checkSelfPermission(LBSTestActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(MapActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             list.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
 
         if (!list.isEmpty()) {
             String[] permissions = list.toArray(new String[list.size()]);
-            ActivityCompat.requestPermissions(LBSTestActivity.this, permissions, 1);
+            ActivityCompat.requestPermissions(MapActivity.this, permissions, 1);
         } else {
             requestLocation();
         }
     }
-
 
     private void requestLocation() {
         initLoaction();
         mLocationClient.start();
     }
 
+    private void navigateTo(BDLocation bdLocation) {
+        if (isFirstLocate) {
+            LatLng ll = new LatLng(bdLocation.getLatitude(), bdLocation.getLongitude());
+            MapStatusUpdate update = MapStatusUpdateFactory.newLatLng(ll);
+            baiduMap.animateMapStatus(update);
+            update =MapStatusUpdateFactory.zoomTo(16f);
+            baiduMap.animateMapStatus(update);
+            isFirstLocate =false;
+        }
+
+        MyLocationData.Builder locationBuilder = new MyLocationData.Builder();
+        locationBuilder.latitude(bdLocation.getLatitude());
+        locationBuilder.latitude(bdLocation.getLongitude());
+        MyLocationData locationData =locationBuilder.build();
+        baiduMap.setMyLocationData(locationData);
+
+    }
 
     private void initLoaction() {
         LocationClientOption option = new LocationClientOption();
@@ -77,6 +103,8 @@ public class LBSTestActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         mLocationClient.stop();
+        mMapView.onDestroy();
+        baiduMap.setMyLocationEnabled(false);
     }
 
     @Override
@@ -105,27 +133,22 @@ public class LBSTestActivity extends AppCompatActivity {
     public class MyLocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(final BDLocation bdLocation) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    StringBuilder builder = new StringBuilder();
-                    builder.append("纬度 ：").append(bdLocation.getLatitude()).append("\n");
-                    builder.append("经度 ：").append(bdLocation.getLongitude()).append("\n");
-                    builder.append("国家 ：").append(bdLocation.getCountry()).append("\n");
-                    builder.append("省 ：").append(bdLocation.getProvince()).append("\n");
-                    builder.append("市 ：").append(bdLocation.getCity()).append("\n");
-                    builder.append("区 ：").append(bdLocation.getDistrict()).append("\n");
-                    builder.append("街道：").append(bdLocation.getStreet()).append("\n");
-                    builder.append("定位方式：");
-                    if (bdLocation.getLocType() == BDLocation.TypeGpsLocation) {
-                        builder.append("GPS");
-                    } else if (bdLocation.getLocType() == BDLocation.TypeNetWorkLocation) {
-                        builder.append("网络定位");
-                    }
-                    textView.setText(builder);
-                }
-            });
+            if(bdLocation.getLocType() == BDLocation.TypeGpsLocation || bdLocation.getLocType() == BDLocation.TypeNetWorkLocation){
+                navigateTo(bdLocation);
+            }
         }
+    }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mMapView.onPause();
     }
 }
