@@ -27,11 +27,11 @@ public class ServiceActivity  extends AppCompatActivity implements OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter10_service_activity);
 
-        Button btn_start_service =findViewById(R.id.btn_start_service);
-        Button btn_stop_service =findViewById(R.id.btn_stop_service);
-        Button btn_bind_service =findViewById(R.id.btn_bind_service);
-        Button btn_unbind_service =findViewById(R.id.btn_unbind_service);
-        Button btn_start_intent_service =findViewById(R.id.btn_start_intent_service);
+        Button btn_start_service = (Button) findViewById(R.id.btn_start_service);
+        Button btn_stop_service = (Button) findViewById(R.id.btn_stop_service);
+        Button btn_bind_service = (Button) findViewById(R.id.btn_bind_service);
+        Button btn_unbind_service = (Button) findViewById(R.id.btn_unbind_service);
+        Button btn_start_intent_service = (Button) findViewById(R.id.btn_start_intent_service);
 
         btn_start_service.setOnClickListener(this);
         btn_stop_service.setOnClickListener(this);

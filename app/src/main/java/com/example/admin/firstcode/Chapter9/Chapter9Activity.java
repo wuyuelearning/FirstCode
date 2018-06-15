@@ -30,15 +30,15 @@ public class Chapter9Activity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter9_menu_activity);
-        textView1 = findViewById(R.id.chapter9_1);
+        textView1 = (TextView) findViewById(R.id.chapter9_1);
         textView1.setOnClickListener(this);
-        textView2 = findViewById(R.id.chapter9_2);
+        textView2 = (TextView) findViewById(R.id.chapter9_2);
         textView2.setOnClickListener(this);
-        textView3 = findViewById(R.id.chapter9_3);
+        textView3 = (TextView) findViewById(R.id.chapter9_3);
         textView3.setOnClickListener(this);
-        textView4 = findViewById(R.id.chapter9_4);
+        textView4 = (TextView) findViewById(R.id.chapter9_4);
         textView4.setOnClickListener(this);
-        textView5 = findViewById(R.id.chapter9_5);
+        textView5 = (TextView) findViewById(R.id.chapter9_5);
         textView5.setOnClickListener(this);
     }
 

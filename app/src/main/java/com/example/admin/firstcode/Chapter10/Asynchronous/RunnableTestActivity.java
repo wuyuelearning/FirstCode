@@ -27,10 +27,10 @@ public class RunnableTestActivity  extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter10_runnable_test_activity);
 
-        Button btn_change_text = findViewById(R.id.btn_change_text);
+        Button btn_change_text = (Button) findViewById(R.id.btn_change_text);
         btn_change_text.setOnClickListener(this);
 
-        tv_change_text = findViewById(R.id.tv_change_text);
+        tv_change_text = (TextView) findViewById(R.id.tv_change_text);
     }
 
     @Override

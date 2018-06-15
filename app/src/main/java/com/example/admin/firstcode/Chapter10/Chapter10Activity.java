@@ -27,11 +27,11 @@ public class Chapter10Activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter10_menu_activity);
 
-        text1  = findViewById(R.id.chapter10_1);
+        text1  = (TextView) findViewById(R.id.chapter10_1);
         text1.setOnClickListener(this);
-        text2  = findViewById(R.id.chapter10_2);
+        text2  = (TextView) findViewById(R.id.chapter10_2);
         text2.setOnClickListener(this);
-        text3  = findViewById(R.id.chapter10_3);
+        text3  = (TextView) findViewById(R.id.chapter10_3);
         text3.setOnClickListener(this);
     }
 

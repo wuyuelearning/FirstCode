@@ -36,9 +36,9 @@ public class ParseXMLActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter9_parse_xml_activity);
 
-        Button btn_parse_xml_pull = findViewById(R.id.btn_parse_xml_pull);
+        Button btn_parse_xml_pull = (Button) findViewById(R.id.btn_parse_xml_pull);
         btn_parse_xml_pull.setOnClickListener(this);
-        Button btn_parse_xml_sax = findViewById(R.id.btn_parse_xml_sax);
+        Button btn_parse_xml_sax = (Button) findViewById(R.id.btn_parse_xml_sax);
         btn_parse_xml_sax.setOnClickListener(this);
 
     }

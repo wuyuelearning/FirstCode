@@ -32,11 +32,11 @@ public class HttpConnectActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter9_http_url_activity);
-        Button btn_send_request_http_url = findViewById(R.id.btn_send_request_http_url);
+        Button btn_send_request_http_url = (Button) findViewById(R.id.btn_send_request_http_url);
         btn_send_request_http_url.setOnClickListener(this);
-        Button btn_send_request_ok_http_url = findViewById(R.id.btn_send_request_ok_http_url);
+        Button btn_send_request_ok_http_url = (Button) findViewById(R.id.btn_send_request_ok_http_url);
         btn_send_request_ok_http_url.setOnClickListener(this);
-        tv_response_text_url = findViewById(R.id.tv_response_text_url);
+        tv_response_text_url = (TextView) findViewById(R.id.tv_response_text_url);
 
     }
 

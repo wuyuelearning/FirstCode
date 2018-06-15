@@ -33,9 +33,9 @@ public class ParseJsonActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter9_parse_json_activity);
 
-        Button btn_parse_json_jsonobject = findViewById(R.id.btn_parse_json_jsonobject);
+        Button btn_parse_json_jsonobject = (Button) findViewById(R.id.btn_parse_json_jsonobject);
         btn_parse_json_jsonobject.setOnClickListener(this);
-        Button btn_parse_json_gson = findViewById(R.id.btn_parse_json_gson);
+        Button btn_parse_json_gson = (Button) findViewById(R.id.btn_parse_json_gson);
         btn_parse_json_gson.setOnClickListener(this);
     }
 

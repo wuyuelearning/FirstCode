@@ -29,11 +29,11 @@ public class HttpUtilActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chapter9_http_util_activity);
 
-        Button btn_send_request_http_url_util = findViewById(R.id.btn_send_request_http_url_util);
+        Button btn_send_request_http_url_util = (Button) findViewById(R.id.btn_send_request_http_url_util);
         btn_send_request_http_url_util.setOnClickListener(this);
-        Button btn_send_request_ok_http_util = findViewById(R.id.btn_send_request_ok_http_util);
+        Button btn_send_request_ok_http_util = (Button) findViewById(R.id.btn_send_request_ok_http_util);
         btn_send_request_ok_http_util.setOnClickListener(this);
-        tv_response_text_util = findViewById(R.id.tv_response_text_util);
+        tv_response_text_util = (TextView) findViewById(R.id.tv_response_text_util);
     }
 
     @Override
