@@ -26,7 +26,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="u23EEjvEa1fKHkVz9wYoS8asfiNwtYRf" />
@@ -86,6 +87,8 @@
         <activity android:name=".Chapter11.Chapter11Activity" />
         <activity android:name=".Chapter11.LBSTestActivity" />
         <activity android:name=".Chapter11.MapActivity"/>
+        <activity android:name=".Chapter12.Chapter12Activity"/>
+        <activity android:name=".Chapter12.MaterialDesignActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
