@@ -88,7 +88,7 @@
         <activity android:name=".Chapter11.LBSTestActivity" />
         <activity android:name=".Chapter11.MapActivity"/>
         <activity android:name=".Chapter12.Chapter12Activity"/>
-        <activity android:name=".Chapter12.MaterialDesignActivity"/>
+        <activity android:name=".Chapter12.FruitActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
