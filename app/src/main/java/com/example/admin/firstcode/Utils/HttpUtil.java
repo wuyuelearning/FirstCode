@@ -1,5 +1,7 @@
 package com.example.admin.firstcode.Utils;
 
+import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,6 +19,7 @@ public class HttpUtil {
 
     //  HttpURlConnection 方式请求网络
     public static void sendHttpRequest(final String address, final HttpCallbackListener listener) {
+//        Toast.makeText(MyApplication.getContext(),"",Toast.LENGTH_SHORT);
         new Thread(new Runnable() {
             @Override
             public void run() {

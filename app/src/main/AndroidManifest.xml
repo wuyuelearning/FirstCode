@@ -21,6 +21,7 @@
 
 
     <application
+        android:name="com.example.admin.firstcode.Utils.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -67,7 +68,7 @@
         <activity android:name=".Chapter6.SQLite.SQLiteDatabaseActivity" />
         <activity android:name=".Chapter7.Chapter7Activity" />
         <activity android:name=".Chapter7.RuntimePermissionActivity" />
-        <activity android:name=".Chapter7.ReadContactActivity" />
+        <activity android:name=".Chapter7.ReadContactActivity" />`
         <activity android:name=".Chapter8.Chapter8Activity" />
         <activity android:name=".Chapter8.Notification.NotificationActivity" />
         <activity android:name=".Chapter8.Notification.NoticationOtherActivity" />
@@ -89,6 +90,8 @@
         <activity android:name=".Chapter11.MapActivity"/>
         <activity android:name=".Chapter12.Chapter12Activity"/>
         <activity android:name=".Chapter12.FruitActivity"/>
+        <activity android:name=".Chapter13.Chapter13Activity"/>
+        <activity android:name=".Chapter13.SecondActivity"/>
 
         <receiver
             android:name=".Chapter5.BaseBroadcast.BootCompleteReceiver"
