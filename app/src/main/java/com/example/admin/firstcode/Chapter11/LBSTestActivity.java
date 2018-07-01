@@ -69,6 +69,7 @@ public class LBSTestActivity extends AppCompatActivity {
     private void initLoaction() {
         LocationClientOption option = new LocationClientOption();
         option.setScanSpan(5000);
+//        option.setLocationMode(LocationClientOption.LocationMode.Device_Sensors);
         option.setIsNeedAddress(true);
         mLocationClient.setLocOption(option);
     }
@@ -104,7 +105,7 @@ public class LBSTestActivity extends AppCompatActivity {
 
     public class MyLocationListener implements BDLocationListener {
         @Override
-        public void onReceiveLocation(final BDLocation bdLocation) {
+        public void onReceiveLocation(BDLocation bdLocation) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -122,7 +123,7 @@ public class LBSTestActivity extends AppCompatActivity {
                     } else if (bdLocation.getLocType() == BDLocation.TypeNetWorkLocation) {
                         builder.append("网络定位");
                     }
-                    textView.setText(builder);
+                    textView.setText(builder.toString());
                 }
             });
         }

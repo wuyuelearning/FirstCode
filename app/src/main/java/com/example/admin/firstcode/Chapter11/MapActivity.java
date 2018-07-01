@@ -42,7 +42,7 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mLocationClient = new LocationClient(getApplicationContext());
-        mLocationClient.registerLocationListener(new MapActivity.MyLocationListener());
+        mLocationClient.registerLocationListener(new MyLocationListener());
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.chapter11_map_activity);
         mMapView = (MapView) findViewById(R.id.mv_map);
@@ -95,6 +95,7 @@ public class MapActivity extends AppCompatActivity {
     private void initLoaction() {
         LocationClientOption option = new LocationClientOption();
         option.setScanSpan(5000);
+        option.setLocationMode(LocationClientOption.LocationMode.Device_Sensors);
         option.setIsNeedAddress(true);
         mLocationClient.setLocOption(option);
     }
