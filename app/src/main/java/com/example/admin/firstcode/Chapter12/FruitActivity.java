@@ -88,6 +88,7 @@ public class FruitActivity extends AppCompatActivity {
             }
             default:
                 break;
+                
         }
         return super.onOptionsItemSelected(item);
     }
